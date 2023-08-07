@@ -22,6 +22,7 @@ import threading
 from random import shuffle
 from subprocess import Popen
 from time import sleep
+import easy_infer
 
 import faiss
 import ffmpeg
@@ -2951,6 +2952,12 @@ with gr.Blocks(theme=gr.themes.Soft(), title="Mangio-RVC-Web 💻") as app:
                 gr.Markdown(value=info)
             except:
                 gr.Markdown(traceback.format_exc())
+        with gr.TabItem("Resources"):
+            
+            easy_infer.download_model()
+            easy_infer.download_dataset(trainset_dir4) 
+            easy_infer.search_model()
+            easy_infer.publish_models()
 
     # region Mangio Preset Handler Region
     def save_preset(
