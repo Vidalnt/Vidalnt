@@ -2959,7 +2959,7 @@ with gr.Blocks(theme=gr.themes.Soft(), title="Mangio-RVC-Web 💻") as app:
                 gr.Markdown(value=info)
             except:
                 gr.Markdown(traceback.format_exc())
-        with gr.TabItem("Resources"):
+        with gr.TabItem("Recursos"):
             
             easy_infer.download_model()
             easy_infer.download_dataset(trainset_dir4) 
