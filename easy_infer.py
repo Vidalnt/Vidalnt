@@ -342,7 +342,7 @@ def save_model(modelname, save_action):
         if not 'content' in parent_path:
             save_folder = os.path.join(parent_path, 'RVC')
         else:
-            save_folder = '/content/drive/MyDrive/RVC'
+            save_folder = '/content/drive/MyDrive/RVC_Backup/Finished'
         
         infos.append(f"Guardando modelo en: {save_folder}")
         yield "\n".join(infos)
@@ -362,6 +362,7 @@ def save_model(modelname, save_action):
         
         if save_action == "Guardar todo":
             print("Guardar todo")
+            save_folder = '/content/drive/MyDrive/RVC_Backup/ManualTrainingBackup'
             shutil.copytree(logs_path, dst)
         else:
             # Si no existe el folder donde se va a comprimir el modelo
@@ -370,6 +371,7 @@ def save_model(modelname, save_action):
             
         if save_action == "Guardar D y G":
             print("Guardar D y G")
+            save_folder = '/content/drive/MyDrive/RVC_Backup/ManualTrainingBackup'
             if len(d_file) > 0:
                 shutil.copy(d_file[0], dst)
             if len(g_file) > 0:
@@ -382,6 +384,7 @@ def save_model(modelname, save_action):
                 
         if save_action == "Guardar voz":
             print("Guardar Voz")
+            save_folder = '/content/drive/MyDrive/RVC_Backup/Finished'
             if len(added_file) > 0:
                 shutil.copy(added_file[0], dst)
             else:
